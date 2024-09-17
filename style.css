@@ -1,8 +1,8 @@
       /* Custom styling for the card */
       .custom-card {
-        width: 18rem;
+        width: 15rem;
         position: relative;
-        margin: 10px;
+        margin: 0px;
       }
       /* Close button styling */
       .btn-close {

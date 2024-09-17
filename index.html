@@ -10,7 +10,9 @@
 
     </style>
   </head>
+
   <body>
+    <section> <!--Section 1-->
     <div class="container mt-4">
       <h3>Input Your Name Here: </h3>
       <div class="mb-3">
@@ -21,7 +23,33 @@
       <!-- Section to display the card -->
       <div class="mt-4" id="cardContainer"></div>
     </div>
+
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </section>
+  <hr>
+  <section> <!--Section 2-->
+    
+    <div class="container mt-4">
+      <h3>Input Value Table: </h3>
+      <div class="mb-3">
+        <input type="text" id="tableInput" class="form-control w-25" placeholder="Enter value">
+      </div>
+      <button class="btn btn-primary" onclick="addTable()">Add Table</button>
+      <table class="table mt-4 table-bordered" id="valueTable">
+        <thead>
+          <tr>
+            <th class="action-column">No</th>
+            <th class="mb-3">Value</th>
+            <th class="action-column">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody" >
+          <!-- Rows will be added here dynamically -->
+        </tbody>
+      </table>
+    </div>
+  
+  </section>
   </body>
 </html>

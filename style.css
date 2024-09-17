@@ -2,7 +2,7 @@
       .custom-card {
         width: 15rem;
         position: relative;
-        margin: 0px;
+        margin-right: 20px;
       }
       /* Close button styling */
       .btn-close {
@@ -18,3 +18,26 @@
         display: flex;
         flex-wrap: wrap;
       }
+
+      table{
+        table-layout: auto;
+        width: 100%;
+      }
+        /* Additional borders */
+  th, td {
+    border: 1px solid black;
+    padding: 5px;        /* Some padding for better readability */
+  }
+
+  th {
+    white-space: nowrap;  /* Prevent headers from wrapping to multiple lines */
+  }
+
+  .action-column {
+    width: 150px; /* You can adjust this value as necessary */
+  }
+
+  #valueTable{
+    width: 600px;
+    height: 30pxpx;
+  }

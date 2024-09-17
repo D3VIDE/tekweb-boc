@@ -33,3 +33,50 @@ function deleteCard(cardId) {
     cardElement.remove();
   }
 }
+
+
+let rowCount = 0;
+
+function addTable() {
+  // Get input value
+  var inputValue = document.getElementById("tableInput").value;
+  if (inputValue.trim() === "") {
+    alert("Please enter a value");
+    return;
+  }
+
+  // Create a new row and cells
+  rowCount++;
+  var table = document.getElementById("tableBody");
+  var newRow = table.insertRow();
+
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(1);
+  var cell3 = newRow.insertCell(2);
+
+  // Insert No, Value, and Delete Button into the row
+  cell1.innerHTML = rowCount;
+  cell2.innerHTML = inputValue;
+  cell3.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>';
+
+  // Clear input field
+  document.getElementById("tableInput").value = "";
+}
+
+function deleteRow(button) {
+  // Delete the row
+  var row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+
+  // Adjust row numbers after deleting a row
+  rowCount--;
+  updateRowNumbers();
+}
+
+function updateRowNumbers() {
+  // Recalculate the "No" column numbers after a row is deleted
+  var table = document.getElementById("tableBody");
+  for (var i = 0; i < table.rows.length; i++) {
+    table.rows[i].cells[0].innerHTML = i + 1;
+  }
+}

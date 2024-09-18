@@ -17,6 +17,9 @@
       <h3>Input Your Name Here: </h3>
       <div class="mb-3">
         <input type="text" id="nameInput" class="form-control w-25" placeholder="Enter your name">
+        <input type="range" class="form-range w-25" min=1 max=255 id="r" value=1 oninput="geser()"><span id="nilaiA">1</span><br>
+        <input type="range" class="form-range w-25"min=1 max=255 id="g" value=1 oninput="geser()"><span id="nilaiB">1</span><br>
+        <input type="range" class="form-range w-25"min=1 max=255 id="b" value=1 oninput="geser()"><span id="nilaiC">1</span><br>
       </div>
       <button class="btn btn-primary" onclick="addCard()">Add Name</button>
       
@@ -44,8 +47,10 @@
             <th class="action-column">Action</th>
           </tr>
         </thead>
-        <tbody id="tableBody" >
-          <!-- Rows will be added here dynamically -->
+        
+        <tbody id="tableBody">
+          <!-- Rows will be added here dynamically Oke-->
+
         </tbody>
       </table>
     </div>

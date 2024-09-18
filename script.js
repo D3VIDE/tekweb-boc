@@ -1,14 +1,17 @@
 function addCard() {
   // Get the name from the input field
   var name = document.getElementById('nameInput').value;
-
+  var r = document.getElementById("r").value;
+  var g = document.getElementById("g").value;
+  var b = document.getElementById("b").value;
+  var bgColor = `rgb(${r},${g},${b})`;
   // Check if name is not empty
   if (name.trim() !== "") {
     var cardId = 'card-' + Date.now();
 
     // Create a card to display the name
     var card = `
-      <div id="${cardId}" class="card custom-card mt-3">
+      <div id="${cardId}" class="card custom-card mt-3" style="background-color: ${bgColor}">
         <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder image">
         <div class="card-body">
           <h5 class="card-title">Hello, ${name}!</h5>
@@ -78,5 +81,21 @@ function updateRowNumbers() {
   var table = document.getElementById("tableBody");
   for (var i = 0; i < table.rows.length; i++) {
     table.rows[i].cells[0].innerHTML = i + 1;
+  }
+}
+//
+
+function geser() {
+  var r = document.getElementById("r").value;
+  var g = document.getElementById("g").value;
+  var b = document.getElementById("b").value;
+  document.getElementById("nilaiA").innerHTML = r;
+  document.getElementById("nilaiB").innerHTML = g;
+  document.getElementById("nilaiC").innerHTML = b;
+
+  // Change the background color of the first card container
+  var cardContainer = document.getElementById("cardContainer").firstElementChild;
+  if (cardContainer) {
+    cardContainer.style.backgroundColor = `rgb(${r},${g},${b})`;
   }
 }
